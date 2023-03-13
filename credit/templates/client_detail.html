@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+</head>
+<body>
+
+
+<h1>{{ object.name }}</h1>
+
+
+{% for account in object.accounts.all %}
+<h2>Account:</h2>
+    {{ account.number }}
+    <h2>Credits:</h2>
+    {% for credit in account.credits.all %}
+        {{ credit.sum }}
+    {% endfor %}
+{% endfor %}
+
+
+
+
+</body>
+</html>
